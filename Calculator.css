@@ -13,7 +13,7 @@ body {
                 border-radius: 12px;
                 box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
                 padding: 20px;
-                width: 300px;
+                width: min(360px, calc(100vw - 56px));
             }
 
             #calculator-input {
@@ -30,15 +30,16 @@ body {
 
             .button-row {
                 display: grid;
-                grid-template-columns: repeat(4, 1fr);
-                gap: 10px;
+                grid-template-columns: repeat(5, minmax(0, 1fr));
+                gap: 8px;
             }
 
             button {
-                height: 50px;
+                min-width: 0;
+                height: 48px;
                 border: none;
                 border-radius: 8px;
-                font-size: 20px;
+                font-size: 17px;
                 cursor: pointer;
                 background: #e7ecf3;
                 transition: background 0.2s ease;
@@ -62,6 +63,14 @@ body {
 
             .clear:hover {
                 background: #ff9c9c;
+            }
+
+            .mode {
+                background: #d7d2f5;
+            }
+
+            .mode:hover {
+                background: #c5bdef;
             }
 
             .equals {
